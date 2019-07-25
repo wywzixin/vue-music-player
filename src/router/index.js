@@ -30,5 +30,13 @@ export default new Router({
          component:(resolve) => require(['@/components/recom-detail/recom-detail'], resolve)
       }]
     },
+    {
+      path: '/singer',
+      component: (resolve) => require(['@/components/singer/singer.vue'], resolve),
+      children: [{
+        path:':id',
+        component:(resolve) => require(['@/components/singer-detail/singer-detail'], resolve)
+      }]
+    }
   ]
 })
