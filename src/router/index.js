@@ -37,6 +37,14 @@ export default new Router({
         path:':id',
         component:(resolve) => require(['@/components/singer-detail/singer-detail'], resolve)
       }]
+    },
+    {
+      path: '/rank',
+      component: (resolve) => require(['@/components/rank/rank'], resolve),
+      children: [{
+        path:':id',
+        component:(resolve) => require(['@/components/top-list/top-list'], resolve)
+      }]
     }
   ]
 })
