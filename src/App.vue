@@ -7,17 +7,20 @@
         <router-view></router-view>
       </keep-alive>
     </transition>
+    <player></player>
   </div>
 </template>
 
 <script>
+import player from "components/player/player";
 import Header from "components/header/header";
 import Nav from 'components/nav/nav';
 export default {
   name: 'App',
   components: {
     Header,
-    Nav
+    Nav,
+    player
   },
 }
 </script>

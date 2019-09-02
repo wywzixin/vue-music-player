@@ -45,6 +45,20 @@ export default new Router({
         path:':id',
         component:(resolve) => require(['@/components/top-list/top-list'], resolve)
       }]
+    },
+      {
+      path: '/search',
+      name: 'Search',
+      component: (resolve) => require(['@/components/search/search'], resolve),
+      children: [{
+        path: ':id',
+        component: (resolve) => require(['@/components/singer-detail/singer-detail'], resolve)
+      }]
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: (resolve) => require(['@/components/user-center/user-center'], resolve)
     }
   ]
 })

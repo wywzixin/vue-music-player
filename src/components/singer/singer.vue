@@ -12,12 +12,14 @@ import Scroll from "base/scroll/scroll";
 import { getSingerList } from "api/singer";
 import Singer from 'assets/js/singer'
 import { ERR_OK } from "api/config";
+import {playlistMixin} from 'assets/js/mixin'
 import { mapMutations, mapGetters } from "vuex";
 
 const HOT_SINGER_LEN = 10
 const HOT_NAME = '热门'
 
 export default {
+  mixins: [playlistMixin],
   data() {
     return {
       singers: []
@@ -27,6 +29,11 @@ export default {
     this._getSingerList();
   },
   methods: {
+      handlePlaylist(playlist) {
+        const bottom = playlist.length > 0 ? '60px' : ''
+        this.$refs.singer.style.bottom = bottom
+        this.$refs.list.refresh()
+      },
     _getSingerList() {
       getSingerList().then(res => {
         if (res.code === ERR_OK) {

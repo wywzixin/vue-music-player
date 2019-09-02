@@ -16,7 +16,7 @@
   }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
+<style scoped lang="scss" >
 @import "assets/css/mixin.scss";
   .no-result {
     text-align: center;
@@ -29,7 +29,7 @@
     .no-result-text {
       margin-top: rem(30);
       font-size: 14px;
-      color: $color-text-d;
+      color: rgba(255, 255, 255, 0.3);
     }
   }
 </style>

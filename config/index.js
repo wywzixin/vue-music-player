@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      //  "/api": "http://ustbhuangyi.com/music/api"
+        '/api':{     //这里是公共部分，在调用接口时后面接不相同的部分，/api就相当于http://192.168.0.199:8926/api这一段
+            target:'http://ustbhuangyi.com/music',   //这里写的是访问接口的域名和端口号
+            changeOrigin: true, // 必须加上这个才能跨域请求
+            // pathRewrite: {  // 重命名
+            //   '^/api': ''
+            // }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -3,7 +3,7 @@
     <transition-group name="list" tag="ul">
       <li :key="item" class="search-item" @click="selectItem(item)" v-for="item in searches">
         <span class="text">{{item}}</span>
-        <span class="icon">
+        <span class="icon" @click.stop="deleteOne(item)">
           <i class="iconfont icon-shanchu1"></i>
         </span>
       </li>
@@ -38,6 +38,7 @@ export default {
     align-items: center;
     height: rem(40);
     overflow: hidden;
+    font-size: 16px;
     &.list-enter-active,
     &.list-leave-active {
       transition: all 0.1s;
@@ -48,14 +49,15 @@ export default {
     }
     .text {
       flex: 1;
-      color: hsla(0, 0%, 100%, 0.5);
+      color: hsla(0,0%,100%,.5);
     }
     .icon {
-      .iocnshanchu1 {
-        font-size: 12px;
-        color: hsla(0, 0%, 100%, 0.3);
-      }
+        position: relative;
     }
   }
 }
+.icon-shanchu1{
+    font-size: 12px;
+    color: hsla(0, 0%, 100%, 0.3);
+ }
 </style>

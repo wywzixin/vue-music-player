@@ -21,14 +21,14 @@ export default {
       type: String,
       default: ""
     },
+     confirmBtnText: {
+        type: String,
+        default: '确定'
+     },
     cancelBtnText: {
-      type: String,
-      default: ""
-    },
-    confirmBtnText: {
-      type: String,
-      default: ""
-    }
+        type: String,
+        default: '取消'
+     }
   },
   data() {
     return {
